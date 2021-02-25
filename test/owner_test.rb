@@ -27,7 +27,17 @@ class OwnerTest < Minitest::Test
     assert_equal car_1.color, actual[0].color
     assert_equal car_1.make, actual[0].make
     assert_equal car_1.model, actual[0].model
-    assert_equal car_1.model, actual[0].model
-    assert_equal car_1.model, actual[0].model
+    assert_equal car_1.year, actual[0].year
+
+
+    owner_1.buy('2001 Silver BMW 3-Series')
+
+    assert_equal "Silver", actual[1].color
+    assert_equal "BMW", actual[1].make
+    assert_equal "3-Series", actual[1].model
+    assert_equal "2001", actual[1].year
+
+    owner_1.buy('1963 Red Chevrolet Corvette')
+    #Pry used here to confirm that all three cars are in array, due to mini test limitations
   end
 end
