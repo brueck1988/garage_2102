@@ -4,6 +4,7 @@ class Car
               :model,
               :year,
               :age
+              
   def initialize(info)
     @color  = info[:description].split(' ')[0]
     @make   = info[:description].split(' ')[1]

@@ -41,7 +41,8 @@ class GarageTest < Minitest::Test
     garage.add_customer(owner_2)
 
     expected = [garage.customers[0].cars, garage.customers[1].cars].flatten
-    assert_equal expected, garage.all_cars
+    garage.all_cars
+    assert_equal expected, garage.all_cars_in_garage
   end
 
   def test_cars_by_make
@@ -56,11 +57,12 @@ class GarageTest < Minitest::Test
     garage.add_customer(owner_1)
     garage.add_customer(owner_2)
     garage.all_cars
-    require "pry";binding.pry
-    car_1 = garage.all_cars[0]
-    car_2 = garage.all_cars[1]
-    car_3 = garage.all_cars[2]
-    car_4 = garage.all_cars[3]
+
+    car_1 = garage.all_cars_in_garage[0]
+    car_2 = garage.all_cars_in_garage[1]
+    car_3 = garage.all_cars_in_garage[2]
+    car_4 = garage.all_cars_in_garage[3]
+
     expected = {"Ford" => [car_1, car_2], "Chevrolet" => [car_3], "Volvo" => [car_4]}
     assert_equal expected, garage.cars_by_make
   end
