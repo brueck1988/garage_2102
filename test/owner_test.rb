@@ -22,6 +22,12 @@ class OwnerTest < Minitest::Test
     car_1 = Car.new({description: 'Green Ford Mustang', year: '1967'})
 
     assert_equal [], owner_1.cars
-    assert_equal [car_1] ,owner_1.buy('1967 Green Ford Mustang')
+    actual = owner_1.buy('1967 Green Ford Mustang')
+
+    assert_equal car_1.color, actual[0].color
+    assert_equal car_1.make, actual[0].make
+    assert_equal car_1.model, actual[0].model
+    assert_equal car_1.model, actual[0].model
+    assert_equal car_1.model, actual[0].model
   end
 end
