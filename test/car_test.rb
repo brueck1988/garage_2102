@@ -18,6 +18,9 @@ class CarTest < Minitest::Test
   end
 
   def test_age
+    car_1 = Car.new({description: 'Green Ford Mustang', year: '1967'})
+
+    assert_equal 54, car_1.age
   end
 
 end
