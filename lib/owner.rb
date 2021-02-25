@@ -1,8 +1,14 @@
 class Owner
-  attr_reader :
-  def initialize(_)
-    @
-
+  attr_reader :name,
+              :occupation,
+              :cars
+  def initialize(name, occupation)
+    @name       = name
+    @occupation = occupation
+    @cars       = []
   end
-  
+
+  def buy(car)
+    require "pry";binding.pry
+  end
 end
